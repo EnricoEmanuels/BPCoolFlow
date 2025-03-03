@@ -26,9 +26,6 @@ public class Bestelling {
 
     }
 
-//    public Bestelling(Integer id) {
-//        this.id = id;
-//    }
 
     // dit is voor je update
     public Bestelling(Integer id, Date bestellingDatum, Klant klant) {
