@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="aircocoolflow@localhost" uuid="8d8cf704-c81b-474e-aee5-a672d5086451">
+    <data-source source="LOCAL" name="aircocoolflow@localhost" uuid="0ca61785-4415-4fa8-9dff-9c9a755a92e8">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
