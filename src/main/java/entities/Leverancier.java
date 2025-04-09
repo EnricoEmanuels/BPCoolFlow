@@ -22,9 +22,7 @@ public class Leverancier {
 
     }
 
-//    public Leverancier(Integer id) {
-//        this.id = id;
-//    }
+
 
     // invoegen van informatie
     public Leverancier(String naam, String achternaam, int trucknummer) {

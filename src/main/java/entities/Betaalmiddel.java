@@ -13,7 +13,7 @@ public class Betaalmiddel {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "methode", nullable = false)
+    @Column(name = "methode", nullable = false, length = 255)
     private String methode;
 
 
@@ -23,6 +23,8 @@ public class Betaalmiddel {
             joinColumns = @JoinColumn(name = "betaalmiddel_id"),
             inverseJoinColumns = @JoinColumn(name = "klant_id"))
     private Set<Klant> klants = new LinkedHashSet<>();
+
+    public Betaalmiddel() {}
 
 
     public Betaalmiddel(Integer id, String methode) {
@@ -56,6 +58,15 @@ public class Betaalmiddel {
 
     public void setKlants(Set<Klant> klants) {
         this.klants = klants;
+    }
+
+    @Override
+    public String toString() {
+        return "Betaalmiddel{" +
+                "id=" + id +
+                ", methode='" + methode + '\'' +
+                ", klants=" + klants +
+                '}';
     }
 
 }

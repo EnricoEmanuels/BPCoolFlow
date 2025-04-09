@@ -31,7 +31,7 @@ public class Klant {
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "leverancier_id", referencedColumnName = "id")
     private Leverancier leverancier;
 
@@ -41,21 +41,12 @@ public class Klant {
     @ManyToMany(mappedBy = "klants")
     private Set<Betaalmiddel> betaalmiddelen = new HashSet<>();
 
-//    @ManyToMany
-//    @JoinTable (
-//            name = "klant_product",
-//            joinColumns = @JoinColumn(name = "klant_id"),
-//            inverseJoinColumns = @JoinColumn(name = "product_id")
-//    )
-//    private Set<Product> products = new HashSet<>();
+
 
     public Klant() {
 
     }
 
-//    public Klant(Integer id) {
-//        this.id = id;
-//    }
 
 
     //invoegen van informatie geen id want id wordt automatisch gegenereerd

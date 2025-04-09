@@ -18,27 +18,11 @@ public class Product {
     @Column(name = "productprijs", nullable = false)
     private float productprijs;
 
-//    @ManyToMany(mappedBy = klanten)
-
-//    @ManyToMany
-//    @JoinTable (
-//            name = "klant_product",
-//            joinColumns = @JoinColumn(name = "product_id"),
-//            inverseJoinColumns = @JoinColumn(name = "klant_id")
-//    )
-//    private Set<Klant> klanten = new LinkedHashSet<>();
-
-//    @ManyToMany(mappedBy = "products")
-//    private Set<Klant> klanten = new LinkedHashSet<>();
-
-
     public Product() {
 
     }
 
-//    public Product(Integer id) {
-//        this.id = id;
-//    }
+
 
     //toevoegen van info
     public Product(String productnaam, float productprijs) {

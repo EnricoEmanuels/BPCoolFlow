@@ -10,6 +10,10 @@ public class JPAConfig {
     private static EntityManager em ;
     private EntityTransaction transaction = em.getTransaction();
 
+
+    private JPAConfig() {
+    }
+
     public static EntityManagerFactory getEntityMangerFactory(){
         if (emf == null ) {
             emf = Persistence.createEntityManagerFactory("CoolFlow");

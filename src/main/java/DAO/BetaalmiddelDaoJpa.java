@@ -2,6 +2,7 @@ package DAO;
 
 import entities.Bestelling;
 import entities.Betaalmiddel;
+import entities.Klant;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
@@ -53,9 +54,9 @@ public class BetaalmiddelDaoJpa implements DAO<Betaalmiddel>{
 
         try {
             transaction.begin();
-            Betaalmiddel betaalmiddel = entityManager.find(Betaalmiddel.class, id); // Zoek het product via ID
+            Betaalmiddel betaalmiddel = entityManager.find(Betaalmiddel.class, id); // Zoek de betaalmiddel via ID
             if (betaalmiddel != null) {
-                entityManager.remove(betaalmiddel); // Verwijder het product als het bestaat
+                entityManager.remove(betaalmiddel); // Verwijder de betaalmiddel als het bestaat
             }
             transaction.commit();
         } catch (Exception e) {
@@ -71,7 +72,7 @@ public class BetaalmiddelDaoJpa implements DAO<Betaalmiddel>{
 
         try {
             transaction.begin();
-            entityManager.merge(betaalmiddel); // Update het product
+            entityManager.merge(betaalmiddel); // Update de betaalmiddel
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();
@@ -84,7 +85,7 @@ public class BetaalmiddelDaoJpa implements DAO<Betaalmiddel>{
     public Betaalmiddel findById(Integer id) {
         Betaalmiddel betaalmiddel = null;
         try {
-            betaalmiddel = entityManager.find(Betaalmiddel.class, id); // Zoek de leverancier via ID
+            betaalmiddel = entityManager.find(Betaalmiddel.class, id); // Zoek de betaalmiddel via ID
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -93,5 +94,6 @@ public class BetaalmiddelDaoJpa implements DAO<Betaalmiddel>{
         return betaalmiddel;
 
     }
+
 
 }

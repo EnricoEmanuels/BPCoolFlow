@@ -50,9 +50,9 @@ public class LeverancierDaoJpa implements DAO<Leverancier> {
 
         try {
             transaction.begin();
-            Leverancier leverancier = entityManager.find(Leverancier.class, id); // Zoek het product via ID
+            Leverancier leverancier = entityManager.find(Leverancier.class, id); // Zoek de leverancier via ID
             if (leverancier != null) {
-                entityManager.remove(leverancier); // Verwijder het product als het bestaat
+                entityManager.remove(leverancier); // Verwijder de leverancier als het bestaat
             }
             transaction.commit();
         } catch (Exception e) {
@@ -67,7 +67,7 @@ public class LeverancierDaoJpa implements DAO<Leverancier> {
 
         try {
             transaction.begin();
-            entityManager.merge(leverancier); // Update het product
+            entityManager.merge(leverancier); // Update de leverancier
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();
@@ -81,7 +81,6 @@ public class LeverancierDaoJpa implements DAO<Leverancier> {
     public Leverancier findById(Integer id) {
         Leverancier leverancier = null;
         try {
-            // Geen transactie starten voor find-actie
             leverancier = entityManager.find(Leverancier.class, id); // Zoek de leverancier via ID
         } catch (Exception e) {
             e.printStackTrace();

@@ -52,9 +52,9 @@ public class BestellingDaoJpa implements DAO<Bestelling> {
 
         try {
             transaction.begin();
-            Bestelling bestelling = entityManager.find(Bestelling.class, id); // Zoek het product via ID
+            Bestelling bestelling = entityManager.find(Bestelling.class, id); // Zoek de bestelling via ID
             if (bestelling != null) {
-                entityManager.remove(bestelling); // Verwijder het product als het bestaat
+                entityManager.remove(bestelling); // Verwijder de bestelling als het bestaat
             }
             transaction.commit();
         } catch (Exception e) {
@@ -69,7 +69,7 @@ public class BestellingDaoJpa implements DAO<Bestelling> {
 
         try {
             transaction.begin();
-            entityManager.merge(bestelling); // Update het product
+            entityManager.merge(bestelling); // Update de bestelling
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();
@@ -82,7 +82,7 @@ public class BestellingDaoJpa implements DAO<Bestelling> {
     public Bestelling findById(Integer id) {
         Bestelling bestelling = null;
         try {
-            bestelling = entityManager.find(Bestelling.class, id); // Zoek de leverancier via ID
+            bestelling = entityManager.find(Bestelling.class, id); // Zoek de bestelling via ID
         } catch (Exception e) {
             e.printStackTrace();
         }

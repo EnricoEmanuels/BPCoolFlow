@@ -55,9 +55,9 @@ public class KlantDaoJpa implements DAO<Klant> {
 
         try {
             transaction.begin();
-            Klant klant = entityManager.find(Klant.class, id); // Zoek het product via ID
+            Klant klant = entityManager.find(Klant.class, id); // Zoek de klant via ID
             if (klant != null) {
-                entityManager.remove(klant); // Verwijder het product als het bestaat
+                entityManager.remove(klant); // Verwijder de klant als het bestaat
             }
             transaction.commit();
         } catch (Exception e) {
@@ -72,7 +72,7 @@ public class KlantDaoJpa implements DAO<Klant> {
 
         try {
             transaction.begin();
-            entityManager.merge(klant); // Update het product
+            entityManager.merge(klant); // Update de klant
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();
@@ -85,7 +85,7 @@ public class KlantDaoJpa implements DAO<Klant> {
     public Klant findById(Integer id) {
         Klant klant = null;
         try {
-            klant = entityManager.find(Klant.class, id); // Zoek de leverancier via ID
+            klant = entityManager.find(Klant.class, id); // Zoek de klant via ID
         } catch (Exception e) {
             e.printStackTrace();
         }
